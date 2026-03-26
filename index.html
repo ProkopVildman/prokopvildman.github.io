@@ -15,7 +15,6 @@ body {
     font-family: 'Prompt', sans-serif;
     color: #212121;
     margin: 0;
-    padding: 0;
 }
 
 header {
@@ -27,7 +26,7 @@ header {
 
 section {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 20px;
     background: white;
     border-radius: 12px;
@@ -36,7 +35,6 @@ section {
 
 h2 {
     color: #0d47a1;
-    margin-bottom: 10px;
 }
 
 ul {
@@ -63,68 +61,89 @@ img {
     max-width: 500px;
     border-radius: 10px;
     border: 3px solid #1976d2;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     margin-top: 20px;
 }
 
 .video-container {
     text-align: center;
-    margin-top: 20px;
 }
 </style>
 
 <body>
 
 <header>
-    <h1>Ahoj, já jsem Prokop</h1>
-    <p></p>
+    <h1 id="name">Ahoj, já jsem Prokop</h1>
+    <p id="about">Načítám data...</p>
 </header>
 
 <section>
     <h2>Kdo jsem</h2>
-    <p>Jsem člověk.</p>
+    <p id="bio"></p>
 </section>
 
 <section>
-    <h2>Co umím</h2>
-    <ul>
-        <li>Umím všechno.</li>
-    </ul>
+    <h2>Dovednosti</h2>
+    <ul id="skills"></ul>
 </section>
 
 <section>
-    <h2>Co mě baví</h2>
-    <p>Baví mě motorky, auta a MTB.</p>
-    <ul>
-        <li>Horské kolo</li>
-        <li>Motorky</li>
-        <li>Auta</li>
-    </ul>
-    <img src="https://www.bikepark-online.de/wp-content/bilder/spicak/Spicak-2017-007.jpg" alt="Downhill">
+    <h2>Projekty / Zájmy</h2>
+    <ul id="interests"></ul>
+    <img id="image" src="" alt="">
 </section>
 
 <section>
     <h2>Kam směřuju</h2>
-    <p>Domů.</p>
+    <p id="goal"></p>
 </section>
 
 <section class="video-container">
     <h2>Moje oblíbené video</h2>
     <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/FwUhklR4NOI?si=56GWEPf97nZPAo_v" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
+        src="https://www.youtube.com/embed/FwUhklR4NOI" 
+        frameborder="0" allowfullscreen>
     </iframe>
 </section>
 
 <section>
     <h2>Odkazy</h2>
-    <p><a href="https://www.trekbikes.com/cz/cs_CZ/" target="_blank">Trek Bikes</a></p>
+    <p><a id="link" href="#" target="_blank">Můj odkaz</a></p>
 </section>
+
+<script>
+fetch('profile.json')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('name').innerText = data.name;
+        document.getElementById('about').innerText = data.about;
+        document.getElementById('bio').innerText = data.bio;
+        document.getElementById('goal').innerText = data.goal;
+
+        // skills
+        const skillsList = document.getElementById('skills');
+        data.skills.forEach(skill => {
+            const li = document.createElement('li');
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+
+        // interests
+        const interestsList = document.getElementById('interests');
+        data.interests.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            interestsList.appendChild(li);
+        });
+
+        // image
+        document.getElementById('image').src = data.image;
+
+        // link
+        const link = document.getElementById('link');
+        link.href = data.link;
+        link.textContent = data.linkText;
+    });
+</script>
 
 </body>
 </html>
-
-
