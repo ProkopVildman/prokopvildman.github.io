@@ -3,80 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prokopův web</title>
+    <title>Prokop – Osobní IT profil</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<style>@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap');
 
-/* Základní styl stránky */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap');
+
 body {
     background-color: #e3f2fd;
     font-family: 'Prompt', sans-serif;
     color: #212121;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #0d47a1;
+    color: white;
+    padding: 40px 20px;
     text-align: center;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
     padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Nadpis */
-h1 {
-    font-size: 40px;
+h2 {
     color: #0d47a1;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-/* Odstavec */
-p {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Seznam */
 ul {
     list-style: none;
     padding: 0;
-    font-size: 18px;
 }
 
-/* Odkaz */
+li {
+    margin: 6px 0;
+}
+
 a {
     color: #1565c0;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
     color: #d32f2f;
 }
 
-/* Obrázek */
 img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
     border: 3px solid #1976d2;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     margin-top: 20px;
-}</style>
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+</style>
+
 <body>
+
+<header>
     <h1>Ahoj, já jsem Prokop</h1>
-    <p>Jezdím Enduro a Downhill na kole</p>
+    <p>IT student & milovník adrenalinu</p>
+</header>
+
+<section>
+    <h2>Kdo jsem</h2>
+    <p>Jsem student se zájmem o IT, technologie a sport. Baví mě kombinovat technické dovednosti s kreativním myšlením a učit se nové věci.</p>
+</section>
+
+<section>
+    <h2>Co umím</h2>
     <ul>
-        <li>Oblíbená věc: Horské kolo</li>
-        <li>Oblíbená věc: Motorky</li>
-        <li>Oblíbená věc: Auta</li>
+        <li>Základy HTML, CSS</li>
+        <li>Práce s GitHubem a GitHub Pages</li>
+        <li>Základy práce s počítačovým hardwarem</li>
+        <li>Umím si poradit s technickými problémy</li>
     </ul>
-    <img src="https://www.bikepark-online.de/wp-content/bilder/spicak/Spicak-2017-007.jpg" width="400">
-    <br>
-    <a href="https://www.trekbikes.com/cz/cs_CZ/"target="_blank">Trek bikes</a>
-<!-- YouTube video -->
-    <div class="video-container">
-        <h2>Moje oblíbené video</h2>
-        <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/FwUhklR4NOI?si=56GWEPf97nZPAo_v" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
+</section>
+
+<section>
+    <h2>Co mě baví</h2>
+    <p>Ve volném čase jezdím Enduro a Downhill na kole. Mám rád rychlost, techniku a adrenalin.</p>
+    <ul>
+        <li>Horské kolo</li>
+        <li>Motorky</li>
+        <li>Auta</li>
+    </ul>
+    <img src="https://www.bikepark-online.de/wp-content/bilder/spicak/Spicak-2017-007.jpg" alt="Downhill">
+</section>
+
+<section>
+    <h2>Kam směřuju</h2>
+    <p>Chci se dál rozvíjet v IT — hlavně v oblasti webového vývoje a technologií. Do budoucna bych rád pracoval v IT firmě nebo tvořil vlastní projekty.</p>
+</section>
+
+<section class="video-container">
+    <h2>Moje oblíbené video</h2>
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/FwUhklR4NOI?si=56GWEPf97nZPAo_v" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</section>
+
+<section>
+    <h2>Odkazy</h2>
+    <p><a href="https://www.trekbikes.com/cz/cs_CZ/" target="_blank">Trek Bikes</a></p>
+</section>
+
 </body>
 </html>
+
 
